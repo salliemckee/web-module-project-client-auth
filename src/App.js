@@ -9,6 +9,7 @@ import {
 import Login from "./components/Login";
 import FriendsList from "./components/FriendsList";
 import AddFriend from "./components/AddFriend";
+import Logout from "./components/Logout";
 
 function App() {
   return (
@@ -40,6 +41,10 @@ function App() {
         </Route>
         <Route exact path="/friends/add">
           <AddFriend />
+        </Route>
+
+        <Route exact path="/logout">
+          <Logout />
         </Route>
       </div>
     </Router>
