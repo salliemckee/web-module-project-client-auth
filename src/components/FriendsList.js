@@ -8,7 +8,7 @@ const FriendsList = () => {
     const token = window.localStorage.getItem("token");
     axios
       .get("http://localhost:9000/api/friends", {
-        headers: { authorization: token },
+        header: { authorization: token },
       })
       .then((res) => {
         setFriends(res.data);

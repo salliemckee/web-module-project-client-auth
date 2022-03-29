@@ -15,9 +15,11 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    const token = window.localStorage.getItem("token");
     axios
-      .post("http://localhost:9000/api/login", cred)
+      .post("http://localhost:9000/api/login", cred, {
+        headers: { authorization: token },
+      })
       .then((res) => {
         window.localStorage.setItem("token", res.data.payload);
         push("/friends");
